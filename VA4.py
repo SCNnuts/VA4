@@ -329,7 +329,7 @@ elif pages == 'Datasets':
     st.dataframe(data=happiness_merge, use_container_width=False)
 elif pages == 'Visualisaties':
     st.subheader("Hier worden de visualisaties weergegeven die wij hebben opgesteld.")
-    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment)')
+    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment)'))
     if option == 'Plot unemployment per continent':
           st.markdown("Hieronder wordt een grafiek weergegeven met data wereldwijd over de unemployment rate.")
           st.plotly_chart(fig, use_container_width=True)
