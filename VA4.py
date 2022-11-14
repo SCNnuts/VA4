@@ -321,9 +321,10 @@ elif pages == 'Visualisaties':
     st.pyplot(fig1) 
     st.markdown("Hieronder wordt een grafiek weergegeven met een overzicht van de 10 laagste unemployment rate landen wereldwijd.")
     st.pyplot(fig3)
-elif pages == 'Wereld Kaart':    
+elif pages == 'Wereld Kaart':
+    option = st.selectbox('Welke kaart?', ('Heatmap','Choropleth'))
+    option2 = st.selectbox('Wat wil je zien?', ('Unemployment rate','Unemployment rate heatmap'))
     folium_static(m)
-    option2 = st.selectbox('Wat wil je zien?', ('Gemiddelde Airbnb prijs','Gemiddelde huisprijs'))
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
