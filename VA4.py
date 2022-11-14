@@ -329,12 +329,14 @@ elif pages == 'Datasets':
     st.dataframe(data=happiness_merge, use_container_width=False)
 elif pages == 'Visualisaties':
     st.subheader("Hier worden de visualisaties weergegeven die wij hebben opgesteld.")
-    st.markdown("Hieronder wordt een grafiek weergegeven met data wereldwijd over de unemployment rate.")
-    st.plotly_chart(fig, use_container_width=True)
-    st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
-    st.pyplot(fig1) 
-    st.markdown("Hieronder wordt een grafiek weergegeven met een overzicht van de 10 laagste unemployment rate landen wereldwijd.")
-    st.pyplot(fig3)
+    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment'))
+    if option == 'Plot unemployment per continent':
+          st.markdown("Hieronder wordt een grafiek weergegeven met data wereldwijd over de unemployment rate.")
+          st.plotly_chart(fig, use_container_width=True)
+    elif option = 'Bar plots (laagste/hoogste employment'
+          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
+          st.pyplot(fig1) 
+          st.pyplot(fig3)
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
