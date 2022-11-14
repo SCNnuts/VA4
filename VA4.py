@@ -323,7 +323,7 @@ elif pages == 'Visualisaties':
     st.pyplot(fig3)
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
-        if option == 'Heatmap':
+       if option == 'Heatmap':
         st_data = st_folium(m, width=700)               
 elif option == 'Heatmap':
 elif pages == 'Einde':
