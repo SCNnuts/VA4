@@ -179,7 +179,7 @@ folium.Choropleth(geo_data = countries,
                  data = dfn,
                  columns = ['ADMIN', 'Unemployment Rate'],
                  key_on = 'feature.properties.ADMIN',
-                 fill_color = 'RdGy',
+                 fill_color = 'OrRd',
                  fill_opacity=0.5,
                  line_opacity=0.2,
                  zoom_on_click=True,
@@ -187,6 +187,11 @@ folium.Choropleth(geo_data = countries,
 
 #m
 
+dfn_lat_lon = dfn.to_crs(4326)
+dfn_lat_lon['lon'] = dfn.centroid.x  
+dfn_lat_lon['lat'] = dfn.centroid.y
+dfn_lat_lon= dfn_lat_lon.dropna()
+dfn_lat_lon.set_index('Unemployment Rate')
 
 heat_map = folium.Map(location=[0, 0], zoom_start=2, tiles='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
               attr='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors')
