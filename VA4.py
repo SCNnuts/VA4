@@ -8,6 +8,7 @@
 
 #!pip install streamlit
 #!pip install streamlit_folium
+#!pip install statsmodels
 
 
 # In[44]:
