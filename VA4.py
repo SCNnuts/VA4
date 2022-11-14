@@ -322,8 +322,8 @@ elif pages == 'Visualisaties':
     st.markdown("Hieronder wordt een grafiek weergegeven met een overzicht van de 10 laagste unemployment rate landen wereldwijd.")
     st.pyplot(fig3)
 elif pages == 'Wereld Kaart':
-option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
-    if option == 'Heatmap':
+    option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
+        if option == 'Heatmap':
         st_data = st_folium(m, width=700)               
 elif option == 'Heatmap':
 elif pages == 'Einde':
