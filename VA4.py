@@ -25,7 +25,7 @@ import streamlit as st
 import folium
 import streamlit_folium as st_folium
 from streamlit_folium import folium_static
-
+from folium.plugins import HeatMap
 
 st.set_page_config(page_title="Dashboard Noah en Julius", layout = "wide", initial_sidebar_state="expanded")
 
@@ -188,6 +188,15 @@ folium.Choropleth(geo_data = countries,
 #m
 
 
+heat_map = folium.Map(location=[0, 0], zoom_start=2, tiles='https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
+              attr='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors')
+
+heat_data = [[row['lat'], row['lon']] for index, row in dfn_lat_lon.iterrows()]
+
+HeatMap(heat_data).add_to(heat_map)
+
+#heat_map
+
 #plt.title('Unemployment rate per country')
 #plt.show()
 
@@ -326,7 +335,7 @@ elif pages == 'Wereld Kaart':
     if option == 'Choropleth':
         st_data = folium_static(m)               
     elif option == 'Heatmap':
-        st_data = folium_static(m)
+        st_data = folium_static(heat_map)
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
