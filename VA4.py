@@ -324,6 +324,16 @@ elif pages == 'Visualisaties':
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap')
 if option == 'Choropleth':
+    Choropleth(geo_data = countries,
+                 name = 'geometry',
+                 data = dfn,
+                 columns = ['ADMIN', 'Unemployment Rate'],
+                 key_on = 'feature.properties.ADMIN',
+                 fill_color = 'RdGy',
+                 fill_opacity=0.5,
+                 line_opacity=0.2,
+                 zoom_on_click=True,
+                 legend_name = 'unemployment rate per country').add_to(m)                     
     st_data = st_folium(m, width=700)
 elif option == 'Heatmap':
 elif pages == 'Einde':
