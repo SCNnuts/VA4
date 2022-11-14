@@ -25,8 +25,6 @@ import streamlit as st
 import folium
 import streamlit_folium as st_folium
 from streamlit_folium import folium_static
-from st_aggrid import GridOptionsBuilder, AgGrid, GridUpdateMode, DataReturnMode
-
 
 
 st.set_page_config(page_title="Dashboard Noah en Julius", layout = "wide", initial_sidebar_state="expanded")
@@ -311,7 +309,7 @@ if pages == 'Home':
 elif pages == 'Datasets':
     st.subheader('Gebruikte Datasets.')
     st.markdown("Hieronder wordt de dataset met data over het gebruik van de unemployment weergegeven.")
-    st.dataframe(data=unemp_long, use_container_width=False), AgGrid(unemp_long)
+    st.dataframe(data=unemp_long, use_container_width=False)
     st.subheader('Dataset van de wereldwijde happiness.')
     st.markdown("Deze dataset gebruiken wij om te vergelijken op land code, wat de correlatie is tussen de unemployment rate en de happiness rate in een land. deze data sets zijn samengevoegd door de 'Country Name', te mergen.")
     st.dataframe(data=happiness_merge, use_container_width=False)
