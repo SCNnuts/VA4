@@ -9,6 +9,7 @@
 #!pip install streamlit
 #!pip install streamlit_folium
 #!pip install statsmodels
+#!pip install streamlit-aggrid
 
 
 # In[44]:
