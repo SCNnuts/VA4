@@ -310,6 +310,7 @@ elif pages == 'Datasets':
     st.subheader('Gebruikte Datasets.')
     st.markdown("Hieronder wordt de dataset met data over het gebruik van de unemployment weergegeven.")
     st.dataframe(data=unemp_long, use_container_width=False)
+    st.slider(label, min_value=1991, max_value=2021, value=None, step=None, format=None, key=None, help=None, on_change=None, args=None, kwargs=None, *, disabled=False, label_visibility="visible")
     st.subheader('Dataset van de wereldwijde happiness.')
     st.markdown("Deze dataset gebruiken wij om te vergelijken op land code, wat de correlatie is tussen de unemployment rate en de happiness rate in een land. deze data sets zijn samengevoegd door de 'Country Name', te mergen.")
     st.dataframe(data=happiness_merge, use_container_width=False)
