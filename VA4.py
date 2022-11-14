@@ -322,23 +322,10 @@ elif pages == 'Visualisaties':
     st.markdown("Hieronder wordt een grafiek weergegeven met een overzicht van de 10 laagste unemployment rate landen wereldwijd.")
     st.pyplot(fig3)
 elif pages == 'Wereld Kaart':
-    option = st.selectbox('Welke kaart?', ('Heatmap','Choropleth'))
+    option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
      if option == 'Choropleth':
-        st_data = st_folium(m1, width=700)
+        st_data = st_folium(m, width=700)
     elif option == 'Heatmap':
-        option2 = st.selectbox('Wat wil je zien?', ('Gemiddelde Airbnb prijs','Gemiddelde huisprijs'))
-        if option2 == 'Choropleth':
-                 folium.Choropleth(geo_data = countries,
-                 name = 'geometry',
-                 data = dfn,
-                 columns = ['ADMIN', 'Unemployment Rate'],
-                 key_on = 'feature.properties.ADMIN',
-                 fill_color = 'RdGy',
-                 fill_opacity=0.5,
-                 line_opacity=0.2,
-                 zoom_on_click=True,
-                 legend_name = 'unemployment rate per country').add_to(m)
-    folium_static(m)
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
