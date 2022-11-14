@@ -241,20 +241,20 @@ happiness_merge= happiness_merge[['Country name','Country Name','Regional indica
 # In[33]:
 
 
-#import statsmodels.api as sm
-#x = happiness_merge["Freedom to make life choices"]
-#y = happiness_merge["unemployment_rate"]
+import statsmodels.api as sm
+x = happiness_merge["Freedom to make life choices"]
+y = happiness_merge["unemployment_rate"]
 
 
-# model = sm.OLS(y, x).fit()
+model = sm.OLS(y, x).fit()
 
-#import statsmodels.formula.api as smf
-#model = smf.ols(formula = "x ~ y", data=happiness_merge)
-#model = model.fit()
+import statsmodels.formula.api as smf
+model = smf.ols(formula = "x ~ y", data=happiness_merge)
+model = model.fit()
 
-#predictions = model.predict() 
+predictions = model.predict() 
 
-#dfn2= model.summary()
+dfn2= model.summary()
 #dfn2
 
 
@@ -318,7 +318,7 @@ elif pages == 'Visualisaties':
     st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
     st.pyplot(fig1) 
     st.markdown("Hieronder wordt een grafiek weergegeven met een overzicht van de 10 laagste unemployment rate landen wereldwijd.")
-    st.pyplot(fig3)
+    st.pyplot(fig3), st.plotly_chart(dfn2, use_container_width=True)
 elif pages == 'Wereld Kaart':    
     folium_static(m)
 elif pages == 'Einde':
