@@ -23,6 +23,8 @@ import streamlit as st
 import folium
 import streamlit_folium as st_folium
 from streamlit_folium import folium_static
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
 
 
 st.set_page_config(page_title="Dashboard Noah en Julius", layout = "wide", initial_sidebar_state="expanded")
@@ -241,20 +243,20 @@ happiness_merge= happiness_merge[['Country name','Country Name','Regional indica
 # In[33]:
 
 
-import statsmodels.api as sm
-x = happiness_merge["Freedom to make life choices"]
-y = happiness_merge["unemployment_rate"]
+#import statsmodels.api as sm
+#x = happiness_merge["Freedom to make life choices"]
+#y = happiness_merge["unemployment_rate"]
 
 
-model = sm.OLS(y, x).fit()
+#model = sm.OLS(y, x).fit()
 
-import statsmodels.formula.api as smf
-model = smf.ols(formula = "x ~ y", data=happiness_merge)
-model = model.fit()
+#import statsmodels.formula.api as smf
+#model = smf.ols(formula = "x ~ y", data=happiness_merge)
+#model = model.fit()
 
-predictions = model.predict() 
+#predictions = model.predict() 
 
-dfn2= model.summary()
+#dfn2= model.summary()
 #dfn2
 
 
