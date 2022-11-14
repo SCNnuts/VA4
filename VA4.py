@@ -324,9 +324,9 @@ elif pages == 'Visualisaties':
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
-        st_data = st_folium(m, width=700)               
+        st_data = folium_static(m)               
     elif option == 'Heatmap':
-        st_data = st_folium(m, width=700)
+        st_data = folium_static(m)
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
