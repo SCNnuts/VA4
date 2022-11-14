@@ -323,6 +323,7 @@ elif pages == 'Visualisaties':
     st.pyplot(fig3)
 elif pages == 'Wereld Kaart':    
     folium_static(m)
+    option2 = st.selectbox('Wat wil je zien?', ('Gemiddelde Airbnb prijs','Gemiddelde huisprijs'))
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
