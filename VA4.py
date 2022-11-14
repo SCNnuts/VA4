@@ -323,7 +323,21 @@ elif pages == 'Visualisaties':
     st.pyplot(fig3)
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Heatmap','Choropleth'))
-    option2 = st.selectbox('Wat wil je zien?', ('Unemployment rate','Unemployment rate heatmap'))
+     if option == 'Choropleth':
+        st_data = st_folium(m1, width=700)
+    elif option == 'Heatmap':
+        option2 = st.selectbox('Wat wil je zien?', ('Gemiddelde Airbnb prijs','Gemiddelde huisprijs'))
+        if option2 == 'Choropleth':
+                 folium.Choropleth(geo_data = countries,
+                 name = 'geometry',
+                 data = dfn,
+                 columns = ['ADMIN', 'Unemployment Rate'],
+                 key_on = 'feature.properties.ADMIN',
+                 fill_color = 'RdGy',
+                 fill_opacity=0.5,
+                 line_opacity=0.2,
+                 zoom_on_click=True,
+                 legend_name = 'unemployment rate per country').add_to(m)
     folium_static(m)
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
