@@ -153,7 +153,7 @@ plt.title("Unemployment Rate", size=15, color="blue")
 plt.xlabel("Year")
 plt.xticks(rotation = 90) 
 plt.ylabel("Unemployment Rate")
-#plt.show()
+plt.show()
 
 
 # In[20]:
