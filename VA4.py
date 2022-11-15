@@ -332,7 +332,7 @@ elif pages == 'Visualisaties':
           st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
           st.pyplot(fig1) 
           st.pyplot(fig3)
-    elif option == 'Bar plots (laagste/hoogste employment)':
+    elif option == 'Scatterplot van Nederland')':
           st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
           st.plotly_chart(fig7)                                                                                                                      
 elif pages == 'Wereld Kaart':
