@@ -331,6 +331,9 @@ elif pages == 'Visualisaties':
     elif option == 'Scatterplot van Nederland':
           st.markdown("Hieronder wordt een scatterplot weergegeven die de unemployment rate van de afgelopen 30 jaar laat zien in Nederland.")
           st.image("scatternederland.png", width=None ,output_format='auto')
+    elif option == 'Correlatie Matrix':
+        st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
+        st.pyplot(corr)
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
@@ -340,9 +343,6 @@ elif pages == 'Wereld Kaart':
     elif option == 'Heatmap':
         st.markdown("Hieronder wordt een Heatmap weergegeven, door het gebruik van een Headmap is in een snel overzicht goed te zien waar de intensiteit van de unemployment rate het hoogste of laagste is")
         st.image("map.png", width=None ,output_format='auto')
-    elif option == 'Correlatie Matrix':
-        st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
-        st.pyplot(corr)
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
