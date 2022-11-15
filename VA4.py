@@ -332,8 +332,8 @@ elif pages == 'Visualisaties':
           st.markdown("Hieronder wordt een scatterplot weergegeven die de unemployment rate van de afgelopen 30 jaar laat zien in Nederland.")
           st.image("scatternederland.png", width=None ,output_format='auto')
     elif option == 'Correlatie Matrix':
-        st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
-        st.pyplot(corr)
+          st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
+          st.write(corr)
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
