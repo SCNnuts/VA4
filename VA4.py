@@ -320,16 +320,20 @@ elif pages == 'Visualisaties':
           st.plotly_chart(fig, use_container_width=True)
     elif option == 'Bar plots (laagste/hoogste employment)':
           st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
-          st.pyplot(fig1) 
+          st.pyplot(fig1)
+          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 laagste unemployment rate landen wereldwijd.")
           st.pyplot(fig3)
     elif option == 'Scatterplot van Nederland':
-          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
+          st.markdown("Hieronder wordt een scatterplot weergegeven die de unemployment rate van de afgelopen 30 jaar laat zien in Nederland.")
           st.image("scatternederland.png", width=None ,output_format='auto')
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
+        st.markdown("Hieronder wordt een kaart van de wereld laten zien, op deze kaart is goed aftelezen in welke landen er een hoge unemployment is en in welke een lage.")
+        st.markdown("De kaart is interactief dus u heeft de mogelijkheid om in te zoomen per land")
         st_data = folium_static(m)               
     elif option == 'Heatmap':
+        st.markdown("Hieronder wordt een Heatmap weergegeven, door het gebruik van een Headmap is in een snel overzicht goed te zien waar de intensiteit van de unemployment rate het hoogste of laagste is")
         st.image("map.png", width=None ,output_format='auto')
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
