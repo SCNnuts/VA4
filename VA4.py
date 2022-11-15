@@ -334,7 +334,7 @@ elif pages == 'Datasets':
     st.dataframe(data=happiness_merge, use_container_width=False)
 elif pages == 'Visualisaties':
     st.subheader("Hier worden de visualisaties weergegeven die wij hebben opgesteld.")
-    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment)','Scatterplot van Nederland', 'Correlatie Matrix'))
+    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment)','Scatterplot van Nederland', 'Correlatie Matrix', 'Regressie modellen'))
     if option == 'Plot unemployment per continent':
           st.markdown("Hieronder wordt een grafiek weergegeven met data wereldwijd over de unemployment rate.")
           st.plotly_chart(fig, use_container_width=True)
@@ -349,6 +349,12 @@ elif pages == 'Visualisaties':
     elif option == 'Correlatie Matrix':
           st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
           st.image("correlatie.png", width=None ,output_format='auto')
+    elif option == 'Regressie Modellen':
+          st.markdown('Hieronder worden twee verschillende regressiemodellen weergegeven')
+          st.markdown('Eerst is er een OLS gemaakt, hier is het volgende uitgekomen')
+          st.image("OLS1.png", width=None ,output_format='auto')
+          st.markdown('Dit heeft het volgende linieare regressie model')
+          st.image("regressie1.png", width=None ,output_format='auto')
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
