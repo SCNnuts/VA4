@@ -334,7 +334,7 @@ elif pages == 'Visualisaties':
           st.pyplot(fig3)
     elif option == 'Scatterplot van Nederland':
           st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
-          st.pyploy(fig7)                                                                                                                      
+          st.pyplot(fig7)                                                                                                                      
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
