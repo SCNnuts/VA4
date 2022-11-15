@@ -241,6 +241,11 @@ happiness_merge= happiness_merge[['Country name','Country Name','Regional indica
 
 # In[33]:
 
+corr = happiness_merge.corr()
+figc, ax = plt.subplots(figsize=(10,10))
+mask = np.triu(np.ones_like(corr, dtype=bool))
+np.fill_diagonal(mask, False)
+sns.heatmap(happiness_merge.corr(), ax=ax, vmin=-1, cmap="plasma_r", mask=mask ,annot=True)
 
 #import statsmodels.api as sm
 #x = happiness_merge["Freedom to make life choices"]
@@ -314,7 +319,7 @@ elif pages == 'Datasets':
     st.dataframe(data=happiness_merge, use_container_width=False)
 elif pages == 'Visualisaties':
     st.subheader("Hier worden de visualisaties weergegeven die wij hebben opgesteld.")
-    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment)','Scatterplot van Nederland'))
+    option = st.selectbox('Welke visualisatie zou u graag willen bekijken, klik om de balk om de mogelijkheden te zien', ('Plot unemployment per continent','Bar plots (laagste/hoogste employment)','Scatterplot van Nederland', 'Correlatie Matrix'))
     if option == 'Plot unemployment per continent':
           st.markdown("Hieronder wordt een grafiek weergegeven met data wereldwijd over de unemployment rate.")
           st.plotly_chart(fig, use_container_width=True)
@@ -335,6 +340,9 @@ elif pages == 'Wereld Kaart':
     elif option == 'Heatmap':
         st.markdown("Hieronder wordt een Heatmap weergegeven, door het gebruik van een Headmap is in een snel overzicht goed te zien waar de intensiteit van de unemployment rate het hoogste of laagste is")
         st.image("map.png", width=None ,output_format='auto')
+    elif option == 'Correlatie Matrix':
+        st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
+        st.pyplot(corr)
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
