@@ -333,7 +333,7 @@ elif pages == 'Visualisaties':
           st.image("scatternederland.png", width=None ,output_format='auto')
     elif option == 'Correlatie Matrix':
           st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
-          st.write(corr)
+          st.plotly_chart(corr)
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
