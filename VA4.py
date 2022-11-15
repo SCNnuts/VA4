@@ -73,7 +73,7 @@ df1 = unemp.T
 
 fig = px.line(df1[['Africa Eastern and Southern', 'Africa Western and Central',"Middle East & North Africa", 'Central Europe and the Baltics',
                     "Europe & Central Asia",
-                    'East Asia & Pacific', "Latin America & Caribbean", 'United States', 'Australia']])
+                    'East Asia & Pacific', "Latin America & Caribbean", 'America North', 'Australia']])
 #fig1 = fig.history(period= 'Year', start='1991' , end='2021')
 
 
@@ -351,13 +351,13 @@ elif pages == 'Visualisaties':
           st.image("correlatie.png", width=None ,output_format='auto')
     elif option == 'Regressie modellen':
           st.markdown('Hieronder worden twee verschillende regressiemodellen weergegeven.')
-          st.markdown('Eerst is er een OLS gemaakt, hier is het volgende uitgekomen.')
+          st.markdown('Eerst is er een OLS gemaakt op basis van de vrijheid die inwoners hebben om eigen keuzen te maken, hier is het volgende uitgekomen.')
           st.image("OLS1.png", width=None ,output_format='auto')
-          st.markdown('Dit heeft het volgende linieare regressie model')
+          st.markdown('Dit geeft het volgende linieare regressie model')
           st.image("regressie1.png", width=None ,output_format='auto')
-          st.markdown('Eerst is er een OLS gemaakt, hier is het volgende uitgekomen.')
+          st.markdown('Daarna is er een nog een OLS gemaakt op basis van corruptie, hier is het volgende uitgekomen.')
           st.image("OLS2.png", width=None ,output_format='auto')
-          st.markdown('Dit heeft het volgende linieare regressie model')
+          st.markdown('Dit geeft het volgende linieare regressie model')
           st.image("regressie2.png", width=None ,output_format='auto')
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
