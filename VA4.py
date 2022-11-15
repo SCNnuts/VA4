@@ -333,14 +333,13 @@ elif pages == 'Visualisaties':
           st.pyplot(fig1) 
           st.pyplot(fig3)
     elif option == 'Scatterplot van Nederland':
-          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
-          st.pyplot(fig7)                                                                                                                      
+          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")                                                                                                                      
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
         st_data = folium_static(m)               
     elif option == 'Heatmap':
-        st_data = folium_static(heat_map)
+        st.image("map.png", width=None ,output_format='auto')
 elif pages == 'Einde':
     st.markdown('Bedankt voor het bezoeken.')
     st.markdown('Noah Wijnheimer, Julius Slobbe')
