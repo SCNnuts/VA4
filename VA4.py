@@ -355,6 +355,10 @@ elif pages == 'Visualisaties':
           st.image("OLS1.png", width=None ,output_format='auto')
           st.markdown('Dit heeft het volgende linieare regressie model')
           st.image("regressie1.png", width=None ,output_format='auto')
+          st.markdown('Eerst is er een OLS gemaakt, hier is het volgende uitgekomen.')
+          st.image("OLS2.png", width=None ,output_format='auto')
+          st.markdown('Dit heeft het volgende linieare regressie model')
+          st.image("regressie2.png", width=None ,output_format='auto')
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
