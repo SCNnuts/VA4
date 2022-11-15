@@ -349,9 +349,9 @@ elif pages == 'Visualisaties':
     elif option == 'Correlatie Matrix':
           st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
           st.image("correlatie.png", width=None ,output_format='auto')
-    elif option == 'Regressie Modellen':
-          st.markdown('Hieronder worden twee verschillende regressiemodellen weergegeven')
-          st.markdown('Eerst is er een OLS gemaakt, hier is het volgende uitgekomen')
+    elif option == 'Regressie modellen':
+          st.markdown('Hieronder worden twee verschillende regressiemodellen weergegeven.')
+          st.markdown('Eerst is er een OLS gemaakt, hier is het volgende uitgekomen.')
           st.image("OLS1.png", width=None ,output_format='auto')
           st.markdown('Dit heeft het volgende linieare regressie model')
           st.image("regressie1.png", width=None ,output_format='auto')
