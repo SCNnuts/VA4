@@ -156,21 +156,6 @@ plt.ylabel("Unemployment Rate")
 #plt.show()
 
 
-#gk = unemp_long.groupby('Year')
-#gk.get_group('1991')
-
-
-# In[17]:
-
-
-#fig4 = plt.scatter(x="Year", y="Unemployment Rate", data=unemp_long)
-#plt.title("Unemployment Rate", size=20, color="red")
-#plt.xlabel("Year")
-#plt.xticks(rotation = 90) 
-#plt.ylabel("Unemployment Rate")
-#plt.show()
-
-
 # In[20]:
 
 
