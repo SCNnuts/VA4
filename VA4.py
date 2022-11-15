@@ -283,20 +283,20 @@ sns.heatmap(happiness_merge.corr(), ax=ax, vmin=-1, cmap="plasma_r", mask=mask ,
 # Show the layered plot
 #plt.show()
 
-dfn4 = plt.figure()
+#dfn4 = plt.figure()
 
-sns.regplot(x=a,
-            y=b,
-            data=happiness_merge,
-            dropna = True,
-            ci=70)
+#sns.regplot(x=a,
+#           y=b,
+#            data=happiness_merge,
+#            dropna = True,
+#            ci=70)
 
-g= sns.scatterplot(x=a,
-            y=b,
-            data=happiness_merge,
-            color= 'red')
+#g= sns.scatterplot(x=a,
+#            y=b,
+#            data=happiness_merge,
+#            color= 'red')
 
-g.set_title('how your freedom influences the unemployment rate')
+#g.set_title('how your freedom influences the unemployment rate')
 
 
 # In[45]:
@@ -348,7 +348,7 @@ elif pages == 'Visualisaties':
           st.image("scatternederland.png", width=None ,output_format='auto')
     elif option == 'Correlatie Matrix':
           st.markdown('Hieronder wordt de correlatie tussen de twee verschillende datasets weergegeven')
-          st.plotly_chart(dfn4)
+          st.image("correlatie.png", width=None ,output_format='auto')
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
