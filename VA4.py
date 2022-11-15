@@ -145,16 +145,6 @@ plt.show()
 
 # In[16]:
 
-unemp3 = unemp_long.loc[(unemp_long['Country Name'] == 'Netherlands')]
-#unemp3
-
-fig7 = sns.scatterplot(x="Year", y="Unemployment Rate", data=unemp3)
-plt.title("Unemployment Rate", size=15, color="blue")
-plt.xlabel("Year")
-plt.xticks(rotation = 90) 
-plt.ylabel("Unemployment Rate")
-plt.show()
-
 
 # In[20]:
 
@@ -333,7 +323,8 @@ elif pages == 'Visualisaties':
           st.pyplot(fig1) 
           st.pyplot(fig3)
     elif option == 'Scatterplot van Nederland':
-          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")                                                                                                                      
+          st.markdown("Hieronder wordt een barplot weergegeven met een overzicht van de 10 hoogste unemployment rate landen wereldwijd.")
+          st.image("scatternederland.png", width=None ,output_format='auto')
 elif pages == 'Wereld Kaart':
     option = st.selectbox('Welke kaart?', ('Choropleth','Heatmap'))
     if option == 'Choropleth':
